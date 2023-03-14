@@ -12,6 +12,7 @@ const storage = multer.diskStorage({
         // Important file.pdf => important-file-349698563842.pdf
         const fileExt = path.extname(file.originalname);
         const fileName = file.originalname.replace(fileExt, "").toLowerCase().split(" ").join("-") + "-" + Date.now()
+        console.log(fileName);
         cb(null,fileName+ fileExt)
     }
 });
